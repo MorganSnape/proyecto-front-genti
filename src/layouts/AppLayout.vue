@@ -1,4 +1,5 @@
 <script setup>
+import MovementsContainer from '@/components/MovementsContainer.vue'
 // import logo from '@/assets/Logo.png'
 </script>
 
@@ -48,6 +49,7 @@
 
     <v-main>
       <slot></slot>
+      <MovementsContainer />
     </v-main>
   </v-layout>
 </template>
