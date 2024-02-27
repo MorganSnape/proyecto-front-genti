@@ -1,4 +1,5 @@
 import { movementTypes } from '@/models/movements'
+import { categoriesMock } from './categories'
 
 export const movementsMock = [
   {
@@ -10,10 +11,7 @@ export const movementsMock = [
       name: 'Efectivo',
       id: 0
     },
-    category: {
-      name: 'Casa',
-      id: 0
-    }
+    category: categoriesMock[0]
   },
   {
     id: 1,
@@ -24,10 +22,7 @@ export const movementsMock = [
       name: 'Efectivo',
       id: 0
     },
-    category: {
-      name: 'Casa',
-      id: 0
-    }
+    category: categoriesMock[2]
   },
   {
     id: 2,
@@ -38,10 +33,7 @@ export const movementsMock = [
       name: 'Efectivo',
       id: 0
     },
-    category: {
-      name: 'Casa',
-      id: 0
-    }
+    category: categoriesMock[1]
   },
   {
     id: 3,
@@ -52,10 +44,7 @@ export const movementsMock = [
       name: 'Efectivo',
       id: 0
     },
-    category: {
-      name: 'Casa',
-      id: 0
-    }
+    category: categoriesMock[0]
   },
   // {
   //   id: 4,
@@ -66,10 +55,7 @@ export const movementsMock = [
   //     name: 'Efectivo',
   //     id: 0
   //   },
-  //   category: {
-  //     name: 'Casa',
-  //     id: 0
-  //   }
+  //   category: categoriesMock[5]
   // },
   // {
   //   id: 5,
@@ -80,9 +66,6 @@ export const movementsMock = [
   //     name: 'Efectivo',
   //     id: 0
   //   },
-  //   category: {
-  //     name: 'Casa',
-  //     id: 0
-  //   }
+  //   category: categoriesMock[2]
   // }
 ]
