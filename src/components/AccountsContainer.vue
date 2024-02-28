@@ -1,36 +1,25 @@
 <script setup>
-const props = defineProps({
-  accounts: {type: Object, required: true}
-})
-const accounts = props.accounts
+import ItemsContainer from './ItemsContainer.vue'
 
+defineEmits(['add'])
+const props = defineProps({
+  accounts: { type: Object, required: true }
+})
+
+const accounts = props.accounts
 </script>
 
 <template>
-  <v-sheet color="#C6D5E7" width="100%" class="account-container">
-    <v-chip-group selected-class="text-primary" column>
-      <v-chip
-        closable
-        link
-        :to="'?account=' + account.id"
-        v-for="account in accounts"
-        :key="account.id"
-        prepend-icon="mdi-shape"
-        color="primary"
-        >{{ account.name }}</v-chip
-      >
-    </v-chip-group>
-  </v-sheet>
+  <ItemsContainer @add="$emit('add')">
+    <v-chip
+      closable
+      link
+      :to="'?account=' + account.id"
+      v-for="account in accounts"
+      :key="account.id"
+      prepend-icon="mdi-shape"
+      color="primary"
+      >{{ account.name }}</v-chip
+    >
+  </ItemsContainer>
 </template>
-
-<style scoped>
-.v-sheet.account-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 12px 16px;
-  border-radius: 12px;
-}
-
-</style>
