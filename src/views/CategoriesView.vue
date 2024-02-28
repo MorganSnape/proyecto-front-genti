@@ -1,10 +1,24 @@
 <script setup>
+import { ref } from 'vue'
+
 import AppLayout from '@/layouts/AppLayout.vue'
 import CategoriesContainer from '@/components/CategoriesContainer.vue'
 
 import { categoriesMock } from '@/mock/categories.js'
+import AddItemModal from '@/components/AddItemModal.vue'
+import AddCategoryModal from '@/components/AddCategoryModal.vue'
 
-const categories = categoriesMock;
+const categories = categoriesMock
+
+const dialog = ref(false)
+
+function OpenAddCategory() {
+  dialog.value = true
+}
+
+function CloseAddCategory() {
+  dialog.value = false
+}
 </script>
 
 <template>
@@ -17,9 +31,12 @@ const categories = categoriesMock;
 
       <v-row justify="center">
         <v-column>
-          <CategoriesContainer :categories="categories"/>
+          <CategoriesContainer :categories="categories" @add="OpenAddCategory" />
         </v-column>
       </v-row>
     </v-container>
+    <v-dialog v-model="dialog" width="auto" transition="dialog-bottom-transition">
+      <AddCategoryModal @close="CloseAddCategory" />
+    </v-dialog>
   </AppLayout>
 </template>

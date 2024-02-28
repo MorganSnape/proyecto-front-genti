@@ -21,7 +21,7 @@ function cancel() {
     <v-card-title>
       <div>{{ title }}</div>
     </v-card-title>
-    <v-card-text><slot></slot>></v-card-text>
+    <v-card-text><slot></slot></v-card-text>
     <v-spacer></v-spacer>
     <v-card-actions>
       <v-spacer></v-spacer>
