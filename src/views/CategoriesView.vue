@@ -1,15 +1,14 @@
 <script setup>
-import AppLayout from '@/layouts/AppLayout.vue';
+import AppLayout from '@/layouts/AppLayout.vue'
 import CategoriesContainer from '@/components/CategoriesContainer.vue'
 </script>
 
 <template>
   <AppLayout>
     <v-container>
-      <v-row>
-        <h1>Categorias <v-icon icon="mdi-format-list-bulleted"/></h1>
-      </v-row>
-
+      <h1>Categorias <v-icon icon="mdi-format-list-bulleted" /></h1>
+    </v-container>
+    <v-container>
       <v-spacer />
 
       <v-row justify="center">
@@ -20,4 +19,3 @@ import CategoriesContainer from '@/components/CategoriesContainer.vue'
     </v-container>
   </AppLayout>
 </template>
-
