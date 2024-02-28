@@ -1,17 +1,28 @@
 <script setup>
 import { categoriesMock } from '@/mock/categories.js'
 
-const categories = categoriesMock;
+const categories = categoriesMock
 </script>
 
 <template>
-  <v-sheet color="#C6D5E7" width="100%" class="category-container" >
-    <v-chip link :to="'?category='+category.name" v-for="category in categories" :key="category.id" prepend-icon="mdi-shape" variant="elevated">{{ category.name }}</v-chip>
+  <v-sheet color="#C6D5E7" width="100%" class="category-container">
+    <v-chip-group selected-class="text-primary" column>
+      <v-chip
+        closable
+        link
+        :to="'?category=' + category.id"
+        v-for="category in categories"
+        :key="category.id"
+        prepend-icon="mdi-shape"
+        color="primary"
+        >{{ category.name }}</v-chip
+      >
+    </v-chip-group>
   </v-sheet>
 </template>
 
-<style>
-.v-sheet.category-container{
+<style scoped>
+.v-sheet.category-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -19,4 +30,5 @@ const categories = categoriesMock;
   padding: 12px 16px;
   border-radius: 12px;
 }
+
 </style>
