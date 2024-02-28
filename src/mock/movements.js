@@ -1,16 +1,14 @@
 import { movementTypes } from '@/models/movements'
 import { categoriesMock } from './categories'
+import { accountsMock } from './accounts'
 
 export const movementsMock = [
   {
     id: 0,
     type: movementTypes.INGRESO,
-    value: 156,
+    value: 1556,
     date: Date('2024-02-25'),
-    account: {
-      name: 'Efectivo',
-      id: 0
-    },
+    account: accountsMock[0],
     category: categoriesMock[0]
   },
   {
@@ -18,10 +16,7 @@ export const movementsMock = [
     type: movementTypes.EGRESO,
     value: 450,
     date: Date('2024-02-25'),
-    account: {
-      name: 'Efectivo',
-      id: 0
-    },
+    account: accountsMock[1],
     category: categoriesMock[2]
   },
   {
@@ -29,10 +24,7 @@ export const movementsMock = [
     type: movementTypes.INGRESO,
     value: 156,
     date: Date('2024-02-25'),
-    account: {
-      name: 'Efectivo',
-      id: 0
-    },
+    account: accountsMock[0],
     category: categoriesMock[1]
   },
   {
@@ -40,10 +32,7 @@ export const movementsMock = [
     type: movementTypes.EGRESO,
     value: 45,
     date: Date('2024-02-25'),
-    account: {
-      name: 'Efectivo',
-      id: 0
-    },
+    account: accountsMock[2],
     category: categoriesMock[0]
   },
   // {
@@ -51,10 +40,7 @@ export const movementsMock = [
   //   type: movementTypes.EGRESO,
   //   value: 156,
   //   date: Date('2024-02-25'),
-  //   account: {
-  //     name: 'Efectivo',
-  //     id: 0
-  //   },
+  //   account: accountsMock[1],
   //   category: categoriesMock[5]
   // },
   // {
@@ -62,10 +48,7 @@ export const movementsMock = [
   //   type: movementTypes.EGRESO,
   //   value: 16,
   //   date: Date('2024-02-25'),
-  //   account: {
-  //     name: 'Efectivo',
-  //     id: 0
-  //   },
+  //   account: accountsMock[2],
   //   category: categoriesMock[2]
   // }
 ]

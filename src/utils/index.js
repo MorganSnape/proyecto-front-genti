@@ -6,7 +6,7 @@ import { movementTypes } from "@/models/movements"
 export function formatNumberMoney(value, type) {
   let text = ''
 
-  const valueString = Math.abs(value).toLocaleString('en-US', {minimumFractionDigits: 2, useGrouping: false})
+  const valueString = formatNumber(Math.abs(value))
 
   switch (type) {
     case movementTypes.INGRESO:
@@ -19,6 +19,10 @@ export function formatNumberMoney(value, type) {
   }
 
   return text;
+}
+
+export function formatNumber(value) {
+  return value.toLocaleString('en-US', {minimumFractionDigits: 2, useGrouping: false})
 }
 
 export function formatDate(date) {

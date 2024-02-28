@@ -1,4 +1,4 @@
-export const USER1 = {
+export const userMock = {
   username: 'Gedr42',
   name: 'Gabriela',
   lastName:'Ferrer',
