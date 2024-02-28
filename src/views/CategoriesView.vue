@@ -1,6 +1,10 @@
 <script setup>
 import AppLayout from '@/layouts/AppLayout.vue'
 import CategoriesContainer from '@/components/CategoriesContainer.vue'
+
+import { categoriesMock } from '@/mock/categories.js'
+
+const categories = categoriesMock;
 </script>
 
 <template>
@@ -13,7 +17,7 @@ import CategoriesContainer from '@/components/CategoriesContainer.vue'
 
       <v-row justify="center">
         <v-column>
-          <CategoriesContainer />
+          <CategoriesContainer :categories="categories"/>
         </v-column>
       </v-row>
     </v-container>

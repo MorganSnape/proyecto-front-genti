@@ -1,7 +1,9 @@
 <script setup>
-import { categoriesMock } from '@/mock/categories.js'
+const props = defineProps({
+  categories: {type: Object, required: true}
+})
+const categories = props.categories
 
-const categories = categoriesMock
 </script>
 
 <template>

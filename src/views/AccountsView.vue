@@ -4,7 +4,9 @@ import AppLayout from '@/layouts/AppLayout.vue';
 
 <template>
   <AppLayout>
-    <h1>Billetera</h1>
+    <v-container>
+      <h1>Billeteras</h1>
+    </v-container>
   </AppLayout>
 </template>
 
