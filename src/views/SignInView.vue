@@ -1,8 +1,22 @@
 <script setup>
-import router from '@/router';
 import { ref } from 'vue'
 
+
+import CreateUserModal from '@/components/CreateUserModal.vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+
 const loading = ref(false)
+const dialog = ref(false)
+
+function OpenCreateUser() {
+  dialog.value = true
+}
+
+function CloseCreateUser() {
+  dialog.value = false
+}
 
 function signin() {
   loading.value = true
@@ -54,10 +68,13 @@ function signin() {
           </div>
         </div>
         <div id="links">
-          <v-btn variant="text" class="no-account">¿No tienes cuenta?</v-btn>
+          <v-btn variant="text" class="no-account" @click="OpenCreateUser">¿No tienes cuenta?</v-btn>
         </div>
       </v-form>
     </v-container>
+    <v-dialog v-model="dialog" width="auto" transition="dialog-bottom-transition">
+      <CreateUserModal @close="CloseCreateUser" />
+    </v-dialog>
   </v-main>
 </template>
 
