@@ -1,7 +1,10 @@
 <script setup>
+import { ref } from 'vue'
+
 import MovementElement from '@/components/MovementElement.vue'
 
 import { movementsMock } from '@/mock/movements'
+import AddMovementModal from './AddMovementModal.vue';
 
 const movements = movementsMock
 
@@ -11,6 +14,17 @@ const props = defineProps({
     default: 'Últimos Movimientos'
   }
 })
+
+const dialog = ref(false)
+
+function OpenAddMovement() {
+  dialog.value = true
+}
+
+function CloseAddMovement() {
+  dialog.value = false
+}
+
 </script>
 
 <template>
@@ -23,7 +37,7 @@ const props = defineProps({
   >
     <v-sheet class="d-flex flex-row align-center" color="rgba(0,0,0,0)">
       <h2>{{ props.title }} <v-icon icon="mdi-chart-box" /></h2>
-      <v-btn class="ma-4" id="add" icon="mdi-plus" color="primary"></v-btn>
+      <v-btn class="ma-4" id="add" icon="mdi-plus" color="primary" @click="OpenAddMovement"></v-btn>
     </v-sheet>
 
     <v-sheet class="mx-2 mt-4" width="500px">
@@ -37,6 +51,10 @@ const props = defineProps({
       </v-sheet>
     </v-sheet>
   </v-sheet>
+
+  <v-dialog v-model="dialog" width="auto" transition="dialog-bottom-transition">
+    <AddMovementModal @close="CloseAddMovement" />
+  </v-dialog>
 </template>
 
 <style scoped>
