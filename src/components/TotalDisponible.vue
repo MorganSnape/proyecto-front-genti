@@ -38,6 +38,7 @@ const valueString = computed(() => formatNumber(props.value))
 
 #container {
   gap: 12px;
+  cursor: default;
 }
 
 #disponible {
