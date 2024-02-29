@@ -1,14 +1,13 @@
 <script setup>
-import {computed} from 'vue'
+import { computed } from 'vue'
 
 import MovementsContainer from '@/components/MovementsContainer.vue'
 
-import { userMock } from '@/mock/user';
+import { userMock } from '@/mock/user'
 
-const userData = userMock;
+const userData = userMock
 
 const fullName = computed(() => userData.name + ' ' + userData.lastName)
-
 </script>
 
 <template lang="">
@@ -50,7 +49,11 @@ const fullName = computed(() => userData.name + ' ' + userData.lastName)
             :prepend-avatar="userData.urlImage"
             :title="fullName"
             :subtitle="userData.email"
-          ></v-list-item>
+          >
+            <template #append>
+              <v-btn link :to="'/signin'" icon="mdi-exit-to-app" variant="text"></v-btn>
+            </template>
+        </v-list-item>
         </v-list>
       </template>
     </v-navigation-drawer>
