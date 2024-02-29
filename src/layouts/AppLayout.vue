@@ -1,6 +1,14 @@
 <script setup>
+import {computed} from 'vue'
+
 import MovementsContainer from '@/components/MovementsContainer.vue'
-// import logo from '@/assets/Logo.png'
+
+import { userMock } from '@/mock/user';
+
+const userData = userMock;
+
+const fullName = computed(() => userData.name + ' ' + userData.lastName)
+
 </script>
 
 <template lang="">
@@ -39,9 +47,9 @@ import MovementsContainer from '@/components/MovementsContainer.vue'
         <v-divider></v-divider>
         <v-list>
           <v-list-item
-            prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
-            title="Sandra Adams"
-            subtitle="sandra_a88@gmailcom"
+            :prepend-avatar="userData.urlImage"
+            :title="fullName"
+            :subtitle="userData.email"
           ></v-list-item>
         </v-list>
       </template>

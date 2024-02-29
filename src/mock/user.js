@@ -3,5 +3,6 @@ export const userMock = {
   name: 'Gabriela',
   lastName:'Ferrer',
   email: 'ejemplo@ejemplo.com',
-  birthdate: (new Date('01/12/2000'))
+  birthdate: (new Date('01/12/2000')),
+  urlImage: '/src/assets/profile.jpg'
 }
