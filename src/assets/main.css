@@ -1,0 +1,5 @@
+.no-select-drag,
+.no-select-drag img{
+  -webkit-user-drag: none;
+  user-select: none;
+}
