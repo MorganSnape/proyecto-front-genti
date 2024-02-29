@@ -15,20 +15,38 @@ const props = defineProps({
 
 <template>
   <v-sheet
+    id="container"
     class="mt-4 d-flex py-4 flex-column align-center"
     width="100%"
     min-height="100%"
     color="#E1F9FF"
   >
-    <v-sheet class="d-flex flex-row" color="rgba(0,0,0,0)">
-      <h2>{{ props.title }}</h2>
-      <v-icon icon="mdi-chart-box" />
+    <v-sheet class="d-flex flex-row align-center" color="rgba(0,0,0,0)">
+      <h2>{{ props.title }} <v-icon icon="mdi-chart-box" /></h2>
+      <v-btn class="ma-4" id="add" icon="mdi-plus" color="primary"></v-btn>
     </v-sheet>
 
     <v-sheet class="mx-2 mt-4" width="500px">
-      <v-sheet class="d-flex flex-column" width="100%" color="#C6D5E7" style="padding: 12px; gap: 8px; border-radius: 8px;">
+      <v-sheet
+        class="d-flex flex-column"
+        width="100%"
+        color="#C6D5E7"
+        style="padding: 12px; gap: 8px; border-radius: 8px"
+      >
         <MovementElement v-for="movement in movements" :key="movement.id" v-bind="movement" />
       </v-sheet>
     </v-sheet>
   </v-sheet>
 </template>
+
+<style scoped>
+/* .v-sheet.container {
+  position: relative;
+}
+
+#add {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+} */
+</style>
