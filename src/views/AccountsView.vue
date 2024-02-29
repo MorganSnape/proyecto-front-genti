@@ -1,10 +1,23 @@
 <script setup>
-import AccountsContainer from '@/components/AccountsContainer.vue';
-import AppLayout from '@/layouts/AppLayout.vue';
+import { ref } from 'vue'
 
-import { accountsMock } from '@/mock/accounts';
+import AppLayout from '@/layouts/AppLayout.vue'
+import AccountsContainer from '@/components/AccountsContainer.vue'
+import AddAccountModal from '@/components/AddAccountModal.vue'
+
+import { accountsMock } from '@/mock/accounts'
 
 const accounts = accountsMock
+
+const dialog = ref(false)
+
+function OpenAddAccount() {
+  dialog.value = true
+}
+
+function CloseAddAccount() {
+  dialog.value = false
+}
 </script>
 
 <template>
@@ -18,11 +31,12 @@ const accounts = accountsMock
 
       <v-row justify="center">
         <v-column>
-          <AccountsContainer :accounts="accounts"/>
+          <AccountsContainer :accounts="accounts" @add="OpenAddAccount"/>
         </v-column>
       </v-row>
     </v-container>
+    <v-dialog v-model="dialog" width="auto" transition="dialog-bottom-transition">
+      <AddAccountModal @close="CloseAddAccount" />
+    </v-dialog>
   </AppLayout>
 </template>
-
-

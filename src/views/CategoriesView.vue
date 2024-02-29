@@ -5,7 +5,6 @@ import AppLayout from '@/layouts/AppLayout.vue'
 import CategoriesContainer from '@/components/CategoriesContainer.vue'
 
 import { categoriesMock } from '@/mock/categories.js'
-import AddItemModal from '@/components/AddItemModal.vue'
 import AddCategoryModal from '@/components/AddCategoryModal.vue'
 
 const categories = categoriesMock
